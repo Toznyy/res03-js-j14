@@ -1,5 +1,7 @@
-class Book{
-    
+import { BookManager } from './classes/BookManager.js';
+
+class Book {
+
     #id;
     #title;
     #author;
@@ -7,10 +9,10 @@ class Book{
     #totalPages;
     #excerpt;
     #coverImage;
-    
-    
-    constructor(id, title, author, publicationDate, totalPages, excerpt, coverImage){
-        
+
+
+    constructor(id, title, author, publicationDate, totalPages, excerpt, coverImage) {
+
         this.#id = id;
         this.#title = title;
         this.#author = author;
@@ -18,86 +20,102 @@ class Book{
         this.#totalPages = totalPages;
         this.#excerpt = excerpt;
         this.#coverImage = coverImage;
-        
+
     }
-    
-    get(){
-        
+
+    get() {
+
         return this.#id;
     }
-    
-    set id (id){
-        
+
+    set id(id) {
+
         this.#id = id;
-        
+
     }
-    
-    get(){
-        
+
+    get() {
+
         return this.#title;
     }
-    
-    set title (title){
-        
+
+    set title(title) {
+
         this.#title = title;
-        
+
     }
-    
-    get(){
-        
+
+    get() {
+
         return this.#author;
     }
-    
-    set author (author){
-        
+
+    set author(author) {
+
         this.#author = author;
-        
+
     }
-    
-    get(){
-        
+
+    get() {
+
         return this.#publicationDate;
     }
-    
-    set publicationDate (publicationDate){
-        
+
+    set publicationDate(publicationDate) {
+
         this.#publicationDate = publicationDate;
-        
+
     }
-    
-    get(){
-        
+
+    get() {
+
         return this.#totalPages;
     }
-    
-    set totalPages (totalPages){
-        
+
+    set totalPages(totalPages) {
+
         this.#totalPages = totalPages;
-        
+
     }
-    
-    get(){
-        
+
+    get() {
+
         return this.#excerpt;
     }
-    
-    set excerpt (excerpt){
-        
+
+    set excerpt(excerpt) {
+
         this.#excerpt = excerpt;
-        
+
     }
-    
-    get(){
-        
+
+    get() {
+
         return this.#coverImage;
     }
-    
-    set coverImage (coverImage){
-        
+
+    set coverImage(coverImage) {
+
         this.#coverImage = coverImage;
-        
+
     }
-    
+
+    toJSON() {
+
+        let books = {
+            id: this.#id,
+            title: this.#title,
+            author: this.#author,
+            publicationDate: this.#publicationDate,
+            totalPages: this.#totalPages,
+            excerpt: this.#excerpt,
+            coverImage: this.#coverImage,
+        };
+
+        return JSON.stringify(books);
+
+    }
+
 }
 
 export { Book };
