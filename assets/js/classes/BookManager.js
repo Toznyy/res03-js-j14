@@ -52,6 +52,7 @@ class BookManager {
     }
     
     save() {
+        let FirstBook = new Book();
         
     }
     
